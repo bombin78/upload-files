@@ -1,4 +1,4 @@
-import { UploadFile } from './UploadFile';
+import UploadFile from './UploadFile';
 
 
 function App() {

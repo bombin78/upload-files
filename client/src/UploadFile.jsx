@@ -9,7 +9,7 @@ const UploadFile = () => {
 	// Локальный стейт для выбранного файла
 	const [selectedFile, setSelectedFile] = useState(null);
 	// Локальный стейт для ответа сервера с информацией об имени файла и пути где он храниться
-	const [upload, seUpload] = useState();
+	const [uploaded, seUploaded] = useState();
 
 	const handleChange = (event) => {
 		console.log(event.target.files);
@@ -43,6 +43,13 @@ const UploadFile = () => {
 					</li>
 				</ul>
 
+			)}
+
+			{uploaded && (
+				<div>
+					<h2>{uploaded.fileName}</h2>
+					<img src={uploaded.filePath} width="200" alt="" />
+				</div>
 			)}
 		</>
 	);
