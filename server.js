@@ -1,14 +1,19 @@
 const express = require('express');
 const fileUpload = require('express-fileupload');
+const cors = require('cors');
+
+const PORT = process.env.PORT || 5000;
 
 const app = express();
+app.use(cors());
+app.use(fileUpload({}));
 
-app.use(fileUpload({
-	createParentPath: true,
-}));
+// app.use(fileUpload({
+// 	createParentPath: true,
+// }));
 
 
-app.post('./upload', (req, res) => {
+app.post('/upload', (req, res) => {
 	if(!req.files) {
 		return res.status(400).json({msg: 'No file upload'});
 	}
@@ -34,4 +39,4 @@ app.post('./upload', (req, res) => {
 	});
 });
 
-app.listen(5000, () => console.log('Server Started ...'));
+app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
