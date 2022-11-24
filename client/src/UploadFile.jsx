@@ -77,6 +77,7 @@ const UploadFile = () => {
 
   return (
     <div className="wrapper">
+      <h1>Uploads</h1>
       <div className="btns">
         <button onClick={handlePick}>Pick file</button>
         <input

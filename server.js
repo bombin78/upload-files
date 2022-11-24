@@ -39,4 +39,17 @@ app.post('/upload', (req, res) => {
 	});
 });
 
+app.post('/doc', (req, res) => {
+	// Имитация динамически создаваемого файла
+	let ab = new ArrayBuffer(5); // 5 bytes
+	let dataView = new DataView(ab);
+	dataView.setInt8(0, 104);
+	dataView.setInt8(1, 101);
+	dataView.setInt8(2, 108);
+	dataView.setInt8(3, 108);
+	dataView.setInt8(4, 111);
+
+	res.send(Buffer.from(ab));
+})
+
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
