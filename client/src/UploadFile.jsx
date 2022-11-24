@@ -34,7 +34,6 @@ const UploadFile = () => {
 
   const handlePick = () => {
     filePicker.current.click();
-    console.log('filePicker', filePicker);
   };
 
   const dragStartHandler = (e) => {

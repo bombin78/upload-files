@@ -25,9 +25,9 @@ const DownloadFile = () => {
   async function request() {
     return await fetch(hostUrl, {
       method: 'POST',
-	  header: {
-		'Content-type': 'application/octet-stream'
-	  }
+	    header: {
+        'Content-Type': 'application/octet-stream'
+      }
     });
   }
 
